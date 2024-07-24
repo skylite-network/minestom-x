@@ -3,7 +3,8 @@ An experimental [Minestom](https://github.com/Minestom/Minestom) fork with frequ
 
 ## Changes
 - Remove permissions
-- Improve notification API
+- Add `sendNotification` to `Player`
+- Add `sendNotification` and `sendPluginMessage` to `PacketGroupingAudience`
 - [And more...](https://github.com/skylite-network/minestom-x/compare/247db8..HEAD)
 
 ## Usage

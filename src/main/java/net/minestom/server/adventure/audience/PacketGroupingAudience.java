@@ -17,12 +17,14 @@ import net.minestom.server.entity.Player;
 import net.minestom.server.message.ChatPosition;
 import net.minestom.server.message.Messenger;
 import net.minestom.server.network.packet.server.ServerPacket;
+import net.minestom.server.network.packet.server.common.PluginMessagePacket;
 import net.minestom.server.network.packet.server.play.ActionBarPacket;
 import net.minestom.server.network.packet.server.play.ClearTitlesPacket;
 import net.minestom.server.network.packet.server.play.PlayerListHeaderAndFooterPacket;
 import net.minestom.server.utils.PacketUtils;
 import org.jetbrains.annotations.NotNull;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 
 /**
@@ -141,5 +143,27 @@ public interface PacketGroupingAudience extends ForwardingAudience {
     @Override
     default @NotNull Iterable<? extends Audience> audiences() {
         return this.getPlayers();
+    }
+
+    /**
+     * Sends a plugin message to the audience.
+     *
+     * @param channel the message channel
+     * @param data    the message data
+     */
+    default void sendPluginMessage(@NotNull String channel, byte @NotNull [] data) {
+        sendGroupedPacket(new PluginMessagePacket(channel, data));
+    }
+
+    /**
+     * Sends a plugin message to the audience.
+     * <p>
+     * Message encoded to UTF-8.
+     *
+     * @param channel the message channel
+     * @param message the message
+     */
+    default void sendPluginMessage(@NotNull String channel, @NotNull String message) {
+        sendPluginMessage(channel, message.getBytes(StandardCharsets.UTF_8));
     }
 }
