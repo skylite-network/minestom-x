@@ -3,6 +3,7 @@ An experimental [Minestom](https://github.com/Minestom/Minestom) fork with frequ
 
 ## Changes
 - Remove permissions
+- Improve notification API
 - [And more...](https://github.com/skylite-network/minestom-x/compare/247db8..HEAD)
 
 ## Usage
