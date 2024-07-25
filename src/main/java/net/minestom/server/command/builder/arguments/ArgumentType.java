@@ -260,13 +260,4 @@ public class ArgumentType {
     public static ArgumentLong Long(@NotNull String id) {
         return new ArgumentLong(id);
     }
-
-    /**
-     * @see ArgumentEntity
-     * @deprecated use {@link #Entity(String)}
-     */
-    @Deprecated
-    public static ArgumentEntity Entities(@NotNull String id) {
-        return new ArgumentEntity(id);
-    }
 }

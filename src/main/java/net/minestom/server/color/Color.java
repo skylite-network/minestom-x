@@ -136,21 +136,6 @@ public class Color implements RGBLike {
         return new Color(r, g, b);
     }
 
-    @Deprecated
-    public int getRed() {
-        return this.red;
-    }
-
-    @Deprecated
-    public int getGreen() {
-        return this.green;
-    }
-
-    @Deprecated
-    public int getBlue() {
-        return this.blue;
-    }
-
     @Override
     public int red() {
         return red;

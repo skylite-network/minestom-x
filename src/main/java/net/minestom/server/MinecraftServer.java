@@ -60,11 +60,7 @@ public final class MinecraftServer implements MinecraftConstants {
     public static final String THREAD_NAME_TICK_SCHEDULER = "Ms-TickScheduler";
     public static final String THREAD_NAME_TICK = "Ms-Tick";
 
-    // Config
-    // Can be modified at performance cost when increased
-    @Deprecated
-    public static final int TICK_PER_SECOND = ServerFlag.SERVER_TICKS_PER_SECOND;
-    public static final int TICK_MS = 1000 / TICK_PER_SECOND;
+    public static final int TICK_MS = 1000 / ServerFlag.SERVER_TICKS_PER_SECOND;
 
     // In-Game Manager
     private static volatile ServerProcess serverProcess;
@@ -199,30 +195,6 @@ public final class MinecraftServer implements MinecraftConstants {
 
     public static boolean isStopping() {
         return !isStarted();
-    }
-
-    /**
-     * Gets the chunk view distance of the server.
-     * <p>
-     * Deprecated in favor of {@link ServerFlag#CHUNK_VIEW_DISTANCE}
-     *
-     * @return the chunk view distance
-     */
-    @Deprecated
-    public static int getChunkViewDistance() {
-        return ServerFlag.CHUNK_VIEW_DISTANCE;
-    }
-
-    /**
-     * Gets the entity view distance of the server.
-     * <p>
-     * Deprecated in favor of {@link ServerFlag#ENTITY_VIEW_DISTANCE}
-     *
-     * @return the entity view distance
-     */
-    @Deprecated
-    public static int getEntityViewDistance() {
-        return ServerFlag.ENTITY_VIEW_DISTANCE;
     }
 
     /**
