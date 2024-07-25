@@ -99,7 +99,7 @@ public abstract class Instance implements Block.Getter, Block.Setter,
     private final ChunkCache blockRetriever = new ChunkCache(this, null, null);
 
     // the uuid of this instance
-    protected UUID uniqueId;
+    protected final UUID uniqueId;
 
     // instance custom data
     protected TagHandler tagHandler = TagHandler.newHandler();

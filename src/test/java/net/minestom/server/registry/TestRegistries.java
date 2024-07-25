@@ -18,21 +18,21 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 public class TestRegistries implements Registries {
-    public DynamicRegistry<ChatType> chatType = null;
-    public DynamicRegistry<DimensionType> dimensionType = null;
-    public DynamicRegistry<Biome> biome = null;
-    public DynamicRegistry<DamageType> damageType = null;
-    public DynamicRegistry<TrimMaterial> trimMaterial = null;
-    public DynamicRegistry<TrimPattern> trimPattern = null;
-    public DynamicRegistry<BannerPattern> bannerPattern = null;
-    public DynamicRegistry<WolfMeta.Variant> wolfVariant = null;
-    public DynamicRegistry<Enchantment> enchantment = null;
-    public DynamicRegistry<PaintingMeta.Variant> paintingVariant = null;
-    public DynamicRegistry<JukeboxSong> jukeboxSong = null;
+    public final DynamicRegistry<ChatType> chatType = null;
+    public final DynamicRegistry<DimensionType> dimensionType = null;
+    public final DynamicRegistry<Biome> biome = null;
+    public final DynamicRegistry<DamageType> damageType = null;
+    public final DynamicRegistry<TrimMaterial> trimMaterial = null;
+    public final DynamicRegistry<TrimPattern> trimPattern = null;
+    public final DynamicRegistry<BannerPattern> bannerPattern = null;
+    public final DynamicRegistry<WolfMeta.Variant> wolfVariant = null;
+    public final DynamicRegistry<Enchantment> enchantment = null;
+    public final DynamicRegistry<PaintingMeta.Variant> paintingVariant = null;
+    public final DynamicRegistry<JukeboxSong> jukeboxSong = null;
     public DynamicRegistry<BinaryTagSerializer<? extends LevelBasedValue>> enchantmentLevelBasedValues = null;
     public DynamicRegistry<BinaryTagSerializer<? extends ValueEffect>> enchantmentValueEffects = null;
-    public DynamicRegistry<BinaryTagSerializer<? extends EntityEffect>> enchantmentEntityEffects = null;
-    public DynamicRegistry<BinaryTagSerializer<? extends LocationEffect>> enchantmentLocationEffects = null;
+    public final DynamicRegistry<BinaryTagSerializer<? extends EntityEffect>> enchantmentEntityEffects = null;
+    public final DynamicRegistry<BinaryTagSerializer<? extends LocationEffect>> enchantmentLocationEffects = null;
 
     public TestRegistries() {
 

@@ -60,7 +60,7 @@ public final class MetadataHolder {
     private volatile Map<Integer, Metadata.Entry<?>> entryMap = null;
 
     @SuppressWarnings("FieldMayBeFinal")
-    private volatile boolean notifyAboutChanges = true;
+    private final boolean notifyAboutChanges = true;
     private final Map<Integer, Metadata.Entry<?>> notNotifiedChanges = new HashMap<>();
 
     public MetadataHolder(@Nullable Entity entity) {

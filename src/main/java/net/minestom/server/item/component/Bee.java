@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 public record Bee(@NotNull CustomData entityData, int ticksInHive, int minTicksInHive) {
 
-    public static @NotNull NetworkBuffer.Type<Bee> NETWORK_TYPE = new NetworkBuffer.Type<Bee>() {
+    public static final @NotNull NetworkBuffer.Type<Bee> NETWORK_TYPE = new NetworkBuffer.Type<Bee>() {
         @Override
         public void write(@NotNull NetworkBuffer buffer, Bee value) {
             buffer.write(CustomData.NETWORK_TYPE, value.entityData);
@@ -22,7 +22,7 @@ public record Bee(@NotNull CustomData entityData, int ticksInHive, int minTicksI
                     buffer.read(NetworkBuffer.VAR_INT));
         }
     };
-    public static @NotNull BinaryTagSerializer<Bee> NBT_TYPE = BinaryTagSerializer.COMPOUND.map(
+    public static final @NotNull BinaryTagSerializer<Bee> NBT_TYPE = BinaryTagSerializer.COMPOUND.map(
             tag -> new Bee(CustomData.NBT_TYPE.read(tag.getCompound("entity_data")),
                     tag.getInt("ticks_in_hive"),
                     tag.getInt("min_ticks_in_hive")),

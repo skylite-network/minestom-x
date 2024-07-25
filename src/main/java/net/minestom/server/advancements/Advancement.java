@@ -38,7 +38,7 @@ public class Advancement {
 
     // Packet
     private AdvancementsPacket.Criteria criteria;
-    private boolean sendTelemetryData;
+    private final boolean sendTelemetryData;
 
     public Advancement(@NotNull Component title, @NotNull Component description,
                        @NotNull Material icon, @NotNull FrameType frameType,

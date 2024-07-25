@@ -56,7 +56,7 @@ public class LivingEntity extends Entity implements EquipmentHandler {
 
     // ItemStack pickup
     protected boolean canPickupItem;
-    protected Cooldown itemPickupCooldown = new Cooldown(Duration.of(5, TimeUnit.SERVER_TICK));
+    protected final Cooldown itemPickupCooldown = new Cooldown(Duration.of(5, TimeUnit.SERVER_TICK));
 
     protected boolean isDead;
 

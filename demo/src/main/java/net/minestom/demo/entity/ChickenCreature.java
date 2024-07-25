@@ -38,8 +38,4 @@ public class ChickenCreature extends EntityCreature {
         getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.1);
     }
 
-    @Override
-    public void spawn() {
-
-    }
 }

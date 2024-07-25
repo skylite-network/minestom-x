@@ -74,7 +74,6 @@ import net.minestom.server.network.packet.server.play.data.WorldPos;
 import net.minestom.server.network.player.GameProfile;
 import net.minestom.server.network.player.PlayerConnection;
 import net.minestom.server.network.player.PlayerSocketConnection;
-import net.minestom.server.particle.Particle;
 import net.minestom.server.recipe.Recipe;
 import net.minestom.server.recipe.RecipeManager;
 import net.minestom.server.registry.DynamicRegistry;
@@ -184,7 +183,7 @@ public class Player extends LivingEntity implements CommandSender, Localizable, 
     private int level;
     private int portalCooldown = 0;
 
-    protected PlayerInventory inventory;
+    protected final PlayerInventory inventory;
     private Inventory openInventory;
     // Used internally to allow the closing of inventory within the inventory listener
     private boolean didCloseInventory;
@@ -205,7 +204,7 @@ public class Player extends LivingEntity implements CommandSender, Localizable, 
     private final ChunkUpdateLimitChecker chunkUpdateLimitChecker = new ChunkUpdateLimitChecker(6);
 
     // Experience orb pickup
-    protected Cooldown experiencePickupCooldown = new Cooldown(Duration.of(10, TimeUnit.SERVER_TICK));
+    protected final Cooldown experiencePickupCooldown = new Cooldown(Duration.of(10, TimeUnit.SERVER_TICK));
 
     private BelowNameTag belowNameTag;
 
@@ -572,11 +571,6 @@ public class Player extends LivingEntity implements CommandSender, Localizable, 
      */
     public void refreshCommands() {
         sendPacket(MinecraftServer.getCommandManager().createDeclareCommandsPacket(this));
-    }
-
-    @Override
-    public boolean isOnGround() {
-        return onGround;
     }
 
     @Override

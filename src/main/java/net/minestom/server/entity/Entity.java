@@ -1757,6 +1757,6 @@ public class Entity implements Viewable, Tickable, Schedulable, Snapshotable, Ev
         DIGGING,
         SLIDING,
         SHOOTING,
-        INHALING;
+        INHALING
     }
 }

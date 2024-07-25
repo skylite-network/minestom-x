@@ -47,7 +47,7 @@ public abstract class Chunk implements Block.Getter, Block.Setter, Biome.Getter,
 
     private final UUID identifier;
 
-    protected Instance instance;
+    protected final Instance instance;
     protected final int chunkX, chunkZ;
     protected final int minSection, maxSection;
 

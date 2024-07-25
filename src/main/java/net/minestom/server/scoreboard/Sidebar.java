@@ -262,7 +262,7 @@ public class Sidebar implements Scoreboard {
         /**
          * The number format of the line
          */
-        private NumberFormat numberFormat;
+        private final NumberFormat numberFormat;
 
         private final String teamName;
         /**
@@ -386,7 +386,8 @@ public class Sidebar implements Scoreboard {
     private static class SidebarTeam {
 
         private final String teamName;
-        private Component prefix, suffix;
+        private Component prefix;
+        private final Component suffix;
         private final String entityName;
 
         private final Component teamDisplayName = Component.text("displaynametest");

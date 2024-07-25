@@ -10,11 +10,11 @@ import org.jetbrains.annotations.Nullable;
 
 public record FilteredText<T>(@NotNull T text, @Nullable T filtered) {
 
-    public static @NotNull NetworkBuffer.Type<FilteredText<String>> STRING_NETWORK_TYPE = createNetworkType(NetworkBuffer.STRING);
-    public static @NotNull BinaryTagSerializer<FilteredText<String>> STRING_NBT_TYPE = createNbtType(BinaryTagSerializer.STRING);
+    public static final @NotNull NetworkBuffer.Type<FilteredText<String>> STRING_NETWORK_TYPE = createNetworkType(NetworkBuffer.STRING);
+    public static final @NotNull BinaryTagSerializer<FilteredText<String>> STRING_NBT_TYPE = createNbtType(BinaryTagSerializer.STRING);
 
-    public static @NotNull NetworkBuffer.Type<FilteredText<Component>> COMPONENT_NETWORK_TYPE = createNetworkType(NetworkBuffer.COMPONENT);
-    public static @NotNull BinaryTagSerializer<FilteredText<Component>> COMPONENT_NBT_TYPE = createNbtType(BinaryTagSerializer.JSON_COMPONENT);
+    public static final @NotNull NetworkBuffer.Type<FilteredText<Component>> COMPONENT_NETWORK_TYPE = createNetworkType(NetworkBuffer.COMPONENT);
+    public static final @NotNull BinaryTagSerializer<FilteredText<Component>> COMPONENT_NBT_TYPE = createNbtType(BinaryTagSerializer.JSON_COMPONENT);
 
     private static <T> NetworkBuffer.@NotNull Type<FilteredText<T>> createNetworkType(@NotNull NetworkBuffer.Type<T> inner) {
         return new NetworkBuffer.Type<>() {

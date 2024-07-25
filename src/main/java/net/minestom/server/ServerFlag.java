@@ -60,7 +60,7 @@ public final class ServerFlag {
     public static final boolean REGISTRY_UNSAFE_OPS = booleanProperty("minestom.registry.unsafe-ops");
     public static final boolean EVENT_NODE_ALLOW_MULTIPLE_PARENTS = booleanProperty("minestom.event.multiple-parents");
 
-    public static boolean INSIDE_TEST = booleanProperty("minestom.inside-test", false);
+    public static final boolean INSIDE_TEST = booleanProperty("minestom.inside-test", false);
 
     private ServerFlag() {
     }

@@ -1,5 +1,3 @@
-import java.time.Duration
-
 plugins {
     `java-library`
     alias(libs.plugins.blossom)

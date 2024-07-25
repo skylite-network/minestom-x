@@ -49,8 +49,8 @@ public class DynamicChunk extends Chunk {
 
     private boolean needsCompleteHeightmapRefresh = true;
 
-    protected Heightmap motionBlocking = new MotionBlockingHeightmap(this);
-    protected Heightmap worldSurface = new WorldSurfaceHeightmap(this);
+    protected final Heightmap motionBlocking = new MotionBlockingHeightmap(this);
+    protected final Heightmap worldSurface = new WorldSurfaceHeightmap(this);
 
     // Key = ChunkUtils#getBlockIndex
     protected final Int2ObjectOpenHashMap<Block> entries = new Int2ObjectOpenHashMap<>(0);

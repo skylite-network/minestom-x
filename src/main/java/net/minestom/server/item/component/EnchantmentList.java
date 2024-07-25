@@ -18,7 +18,7 @@ public record EnchantmentList(@NotNull Map<DynamicRegistry.Key<Enchantment>, Int
                               boolean showInTooltip) {
     public static final EnchantmentList EMPTY = new EnchantmentList(Map.of(), true);
 
-    public static NetworkBuffer.Type<EnchantmentList> NETWORK_TYPE = new NetworkBuffer.Type<>() {
+    public static final NetworkBuffer.Type<EnchantmentList> NETWORK_TYPE = new NetworkBuffer.Type<>() {
         @Override
         public void write(@NotNull NetworkBuffer buffer, @NotNull EnchantmentList value) {
             buffer.write(NetworkBuffer.VAR_INT, value.enchantments.size());
@@ -42,7 +42,7 @@ public record EnchantmentList(@NotNull Map<DynamicRegistry.Key<Enchantment>, Int
             return new EnchantmentList(enchantments, showInTooltip);
         }
     };
-    public static BinaryTagSerializer<EnchantmentList> NBT_TYPE = new BinaryTagSerializer<>() {
+    public static final BinaryTagSerializer<EnchantmentList> NBT_TYPE = new BinaryTagSerializer<>() {
         @Override
         public @NotNull BinaryTag write(@NotNull Context context, @NotNull EnchantmentList value) {
             CompoundBinaryTag.Builder levels = CompoundBinaryTag.builder();

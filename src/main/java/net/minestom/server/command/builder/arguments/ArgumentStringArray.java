@@ -21,7 +21,7 @@ public class ArgumentStringArray extends Argument<String[]> {
 
     @NotNull
     @Override
-    public String[] parse(@NotNull CommandSender sender, @NotNull String input) {
+    public String @NotNull [] parse(@NotNull CommandSender sender, @NotNull String input) {
         return input.split(Pattern.quote(StringUtils.SPACE));
     }
 

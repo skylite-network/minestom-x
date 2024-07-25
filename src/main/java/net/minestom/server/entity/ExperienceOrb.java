@@ -70,11 +70,6 @@ public class ExperienceOrb extends Entity {
         }
     }
 
-    @Override
-    public void spawn() {
-
-    }
-
     /**
      * Gets the experience count.
      *

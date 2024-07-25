@@ -139,7 +139,7 @@ final class EntityView {
         // Contains all the auto-entity ids that are viewable by this option.
         public final IntSet bitSet = new IntOpenHashSet();
         // 1 if auto, 0 if manual
-        private volatile int auto = 1;
+        private final int auto = 1;
         // The custom rule used to determine if an entity is viewable.
         // null if auto-viewable
         private Predicate<T> predicate = null;
