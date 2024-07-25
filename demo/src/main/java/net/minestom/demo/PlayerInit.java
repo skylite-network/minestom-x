@@ -77,7 +77,7 @@ public class PlayerInit {
                 }
 
                 if (source instanceof Player) {
-                    ((Player) source).sendMessage("You attacked something!");
+                    ((Player) source).sendMessage(Component.text("You attacked something!"));
                 }
             })
             .addListener(PlayerDeathEvent.class, event -> event.setChatMessage(Component.text("custom death message")))

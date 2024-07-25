@@ -1686,15 +1686,6 @@ public class Player extends LivingEntity implements CommandSender, Localizable, 
     }
 
     /**
-     * Kicks the player with a reason.
-     *
-     * @param message the kick reason
-     */
-    public void kick(@NotNull String message) {
-        this.kick(Component.text(message));
-    }
-
-    /**
      * Changes the current held slot for the player.
      *
      * @param slot the slot that the player has to held

@@ -1,5 +1,6 @@
 package net.minestom.demo.commands;
 
+import net.kyori.adventure.text.Component;
 import net.minestom.server.command.CommandSender;
 import net.minestom.server.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -15,7 +16,7 @@ public class LegacyCommand extends net.minestom.server.command.builder.SimpleCom
         if (!(sender instanceof Player)) return false;
 
         System.gc();
-        sender.sendMessage("Explicit GC");
+        sender.sendMessage(Component.text("Explicit GC"));
         return true;
     }
 

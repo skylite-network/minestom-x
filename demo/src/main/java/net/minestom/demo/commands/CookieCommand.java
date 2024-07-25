@@ -1,5 +1,6 @@
 package net.minestom.demo.commands;
 
+import net.kyori.adventure.text.Component;
 import net.minestom.server.command.CommandSender;
 import net.minestom.server.command.builder.Command;
 import net.minestom.server.command.builder.CommandContext;
@@ -33,7 +34,7 @@ public class CookieCommand extends Command {
             byte[] value = String.join(" ", context.get(valueArg)).getBytes();
 
             player.getPlayerConnection().storeCookie(key, value);
-            player.sendMessage(key + " stored");
+            player.sendMessage(Component.text(key + " stored"));
         }
     }
 
@@ -53,9 +54,9 @@ public class CookieCommand extends Command {
 
             player.getPlayerConnection().fetchCookie(key).thenAccept(value -> {
                 if (value == null) {
-                    player.sendMessage(key + ": null");
+                    player.sendMessage(Component.text(key + ": null"));
                 } else {
-                    player.sendMessage(key + ": " + new String(value));
+                    player.sendMessage(Component.text(key + ": " + new String(value)));
                 }
             });
         }

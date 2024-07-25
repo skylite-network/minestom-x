@@ -22,11 +22,6 @@ public class ConsoleSender implements CommandSender {
             .build();
 
     @Override
-    public void sendMessage(@NotNull String message) {
-        LOGGER.info(message);
-    }
-
-    @Override
     public void sendMessage(@NotNull Identity source, @NotNull Component message, @NotNull MessageType type) {
         LOGGER.info(message);
     }

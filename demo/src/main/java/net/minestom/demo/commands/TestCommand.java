@@ -8,6 +8,8 @@ import net.minestom.server.command.CommandSender;
 import net.minestom.server.command.builder.Command;
 import net.minestom.server.command.builder.CommandContext;
 import net.minestom.server.command.builder.arguments.ArgumentType;
+import net.minestom.server.command.builder.condition.Conditions;
+import net.minestom.server.entity.Player;
 import net.minestom.server.sound.SoundEvent;
 
 public class TestCommand extends Command {
@@ -19,12 +21,18 @@ public class TestCommand extends Command {
         var block = ArgumentType.BlockState("block");
         block.setCallback((sender, exception) -> exception.printStackTrace());
 
-        setDefaultExecutor((sender, context) -> {
+        addConditionalSyntax(Conditions::playerOnly, (sender, context) -> {
             sender.playSound(Sound.sound(Key.key("item.trumpet.doot"), Sound.Source.PLAYER, 1, 1));
-            AdventurePacketConvertor.createSoundPacket(Sound.sound(Key.key(SoundEvent.BLOCK_ANVIL_HIT.name()), Sound.Source.HOSTILE, 1, 1), sender.asPlayer());
-        });
-        addSyntax((sender, context) -> System.out.println("executed"), block);
 
+            AdventurePacketConvertor.createSoundPacket(
+                    Sound.sound(
+                            SoundEvent.BLOCK_ANVIL_HIT,
+                            Sound.Source.HOSTILE,
+                            1, 1),
+                    (Player) sender);
+        });
+
+        addSyntax((sender, context) -> System.out.println("executed"), block);
     }
 
     private void usage(CommandSender sender, CommandContext context) {

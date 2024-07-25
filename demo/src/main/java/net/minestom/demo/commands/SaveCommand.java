@@ -1,5 +1,6 @@
 package net.minestom.demo.commands;
 
+import net.kyori.adventure.text.Component;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.CommandSender;
 import net.minestom.server.command.builder.Command;
@@ -28,6 +29,6 @@ public class SaveCommand extends Command {
                 MinecraftServer.getExceptionManager().handleException(e);
             }
         }
-        commandSender.sendMessage("Saving done!");
+        commandSender.sendMessage(Component.text("Saving done!"));
     }
 }

@@ -1,5 +1,6 @@
 package net.minestom.demo.commands;
 
+import net.kyori.adventure.text.Component;
 import net.minestom.server.command.CommandSender;
 import net.minestom.server.command.builder.Command;
 import net.minestom.server.command.builder.CommandContext;
@@ -18,6 +19,6 @@ public class PotionCommand extends Command {
 
     private void potionCommand(@NotNull CommandSender sender, @NotNull CommandContext context) {
         final String potion = context.get(potionArg);
-        sender.sendMessage("Potion: " + potion);
+        sender.sendMessage(Component.text("Potion: " + potion));
     }
 }

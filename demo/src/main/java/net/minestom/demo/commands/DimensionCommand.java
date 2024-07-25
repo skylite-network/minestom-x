@@ -1,5 +1,6 @@
 package net.minestom.demo.commands;
 
+import net.kyori.adventure.text.Component;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.builder.Command;
 import net.minestom.server.command.builder.condition.Conditions;
@@ -18,12 +19,16 @@ public class DimensionCommand extends Command {
             final Player player = (Player) sender;
             final Instance instance = player.getInstance();
             final var instances = MinecraftServer.getInstanceManager().getInstances().stream().filter(instance1 -> !instance1.equals(instance)).toList();
+
             if (instances.isEmpty()) {
-                player.sendMessage("No instance available");
+                player.sendMessage(Component.text("No instance available"));
                 return;
             }
+
             final var newInstance = instances.get(ThreadLocalRandom.current().nextInt(instances.size()));
-            player.setInstance(newInstance).thenRun(() -> player.sendMessage("Teleported"));
+
+            player.setInstance(newInstance).thenRun(() ->
+                    player.sendMessage(Component.text("Teleported")));
         });
     }
 }

@@ -1,5 +1,6 @@
 package net.minestom.demo.commands;
 
+import net.kyori.adventure.text.Component;
 import net.minestom.server.command.CommandSender;
 import net.minestom.server.command.builder.Command;
 import net.minestom.server.command.builder.CommandContext;
@@ -24,6 +25,6 @@ public class SetEntityType extends Command {
 
         var entityType = context.get(entityTypeArg);
         player.switchEntityType(entityType);
-        player.sendMessage("set entity type to " + entityType);
+        player.sendMessage(Component.text("Set entity type to " + entityType));
     }
 }

@@ -20,11 +20,8 @@ public class CommandSenderTest {
 
         assertNull(sender.getMostRecentMessage());
 
-        sender.sendMessage("Hey!!");
-        assertEquals(sender.getMostRecentMessage(), Component.text("Hey!!"));
-
-        sender.sendMessage(new String[]{"Message", "Sending", "Test"});
-        assertEquals(sender.getMostRecentMessage(), Component.text("Test"));
+        sender.sendMessage(Component.text("Hey!"));
+        assertEquals(sender.getMostRecentMessage(), Component.text("Hey!"));
 
         sender.sendMessage(Component.text("Message test!", NamedTextColor.GREEN));
         assertEquals(sender.getMostRecentMessage(), Component.text("Message test!", NamedTextColor.GREEN));

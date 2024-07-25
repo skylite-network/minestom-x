@@ -1,5 +1,6 @@
 package net.minestom.demo.commands;
 
+import net.kyori.adventure.text.Component;
 import net.minestom.server.command.CommandSender;
 import net.minestom.server.command.builder.Command;
 import net.minestom.server.command.builder.CommandContext;
@@ -28,14 +29,14 @@ public class FindCommand extends Command {
 
         Collection<Entity> entities = player.getInstance().getNearbyEntities(player.getPosition(), range);
 
-        player.sendMessage("Search result: ");
+        player.sendMessage(Component.text("Search result: "));
 
         for (Entity entity : entities) {
-            player.sendMessage("    " + entity.getEntityType() + ": ");
-            player.sendMessage("        Meta: " + entity.getEntityMeta());
-            player.sendMessage("        Position: " + entity.getPosition());
+            player.sendMessage(Component.text("    " + entity.getEntityType() + ": "));
+            player.sendMessage(Component.text("        Meta: " + entity.getEntityMeta()));
+            player.sendMessage(Component.text("        Position: " + entity.getPosition()));
         }
 
-        player.sendMessage("End result.");
+        player.sendMessage(Component.text("End result"));
     }
 }
