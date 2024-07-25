@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Represents a sidebar which can contain up to 16 {@link ScoreboardLine}.
  * <p>
- * In order to use it you need to create a new instance using the constructor {@link #Sidebar(String)} and create new lines
+ * In order to use it you need to create a new instance using the constructor {@link #Sidebar(Component)} and create new lines
  * with {@link #createLine(ScoreboardLine)}. You can then add a {@link Player} to the viewing list using {@link #addViewer(Player)}
  * and remove him later with {@link #removeViewer(Player)}.
  * <p>
@@ -27,7 +27,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * {@link #updateLineContent(String, Component)} and {@link #updateLineScore(String, int)}.
  */
 public class Sidebar implements Scoreboard {
-
     private static final AtomicInteger COUNTER = new AtomicInteger();
 
     /**

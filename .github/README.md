@@ -2,9 +2,10 @@
 An experimental [Minestom](https://github.com/Minestom/Minestom) fork with frequent breaking changes.
 
 ## Changes
-- Remove permissions
-- Add `sendNotification` to `Player`
-- Add `sendNotification` and `sendPluginMessage` to `PacketGroupingAudience`
+- Removed permissions
+- Removed many deprecated methods
+- Added `sendNotification` to `Player`
+- Added `sendNotification` and `sendPluginMessage` to `PacketGroupingAudience`
 - [And more...](https://github.com/skylite-network/minestom-x/compare/247db8..HEAD)
 
 ## Usage
